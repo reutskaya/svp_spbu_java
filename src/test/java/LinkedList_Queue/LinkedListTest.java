@@ -16,7 +16,6 @@ public class LinkedListTest {
         testList.add("i am string");
 
         assertEquals(testList.get(0), "i am string");
-        assertNotEquals(testList.get(0), "i am");
     }
 
     @Test
@@ -38,7 +37,6 @@ public class LinkedListTest {
         testList.add("two");
         testList.add("three");
         assertTrue(testList.contains("two"));
-        assertFalse(testList.contains("four"));
     }
 
     //remove

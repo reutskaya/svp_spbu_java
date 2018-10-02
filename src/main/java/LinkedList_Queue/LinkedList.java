@@ -7,9 +7,9 @@ import java.util.ListIterator;
 
 public class LinkedList<E> implements List<E> {
     private static class Node<E> {
-        E item;
-        Node<E> next;
-        Node<E> previous;
+        private E item;
+        private Node<E> next;
+        private Node<E> previous;
 
         Node(Node<E> previous, E element, Node<E> next) {
             this.item = element;
@@ -38,12 +38,14 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public boolean contains(Object o) {
-        if (o == null)
+        if (o == null) {
             throw new IllegalArgumentException("null was requested");
+        }
         else {
             for (Node<E> node = first; node != null; node = node.next) {
-                if (node.item.equals(o))
+                if (node.item.equals(o)) {
                     return true;
+                }
             }
         }
 
@@ -91,7 +93,7 @@ public class LinkedList<E> implements List<E> {
         }
 
         if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("Index " + " is out of bound. Size is " +  this.size);
         }
 
         if (index == 0) {
@@ -123,7 +125,7 @@ public class LinkedList<E> implements List<E> {
     @Override
     public E remove(int index) {
         if (index < 0 || index >= size)
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("Index " + " is out of bound. Size is " +  this.size);
 
         Node<E> e = this.first;
 
@@ -166,7 +168,8 @@ public class LinkedList<E> implements List<E> {
         for (Node<E> node = first; node != null; node = node.next) {
             if (node.item.equals(o)) {
                 return i;
-            } else {
+            }
+            else {
                 i++;
             }
         }
@@ -175,76 +178,76 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public E set(int index, E element) {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public <T> T[] toArray(T[] a) {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean remove(Object o) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends E> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public void clear() {
-
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public ListIterator<E> listIterator() {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public ListIterator<E> listIterator(int index) {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public List<E> subList(int fromIndex, int toIndex) {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 }

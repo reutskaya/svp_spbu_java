@@ -40,7 +40,6 @@ public class QueueTest {
         testQueue.add("two");
         testQueue.add("three");
         assertTrue(testQueue.contains("two"));
-        assertFalse(testQueue.contains("four"));
     }
 
     //poll

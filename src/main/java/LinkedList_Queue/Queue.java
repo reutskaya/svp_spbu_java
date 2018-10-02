@@ -44,61 +44,61 @@ public class Queue<E> implements java.util.Queue<E> {
 
     @Override
     public E element() {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public <T> T[] toArray(T[] a) {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean remove(Object o) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public void clear() {
-
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public boolean offer(E e) {
-        return false;
+        throw  new UnsupportedOperationException();
     }
 
     @Override
     public E remove() {
-        return null;
+        throw  new UnsupportedOperationException();
     }
 }
