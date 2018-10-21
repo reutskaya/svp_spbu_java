@@ -15,7 +15,7 @@ public class TreeMap<E extends Comparable<E>, V> implements java.util.Map<E, V> 
 
     @Override
     public boolean isEmpty() {
-        return tree == null;
+        return tree.isEmpty();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class TreeMap<E extends Comparable<E>, V> implements java.util.Map<E, V> 
 
     @Override
     public boolean containsValue(Object value) {
-        throw new NullPointerException("map does not permit null keys");
+        throw new UnsupportedOperationException("operation is unsupported");
     }
 
     @Override

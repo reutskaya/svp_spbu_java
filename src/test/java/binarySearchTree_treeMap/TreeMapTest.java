@@ -44,7 +44,6 @@ public class TreeMapTest {
 
         assertEquals(treeMap.remove(5), (Integer) 5);
         assertFalse(treeMap.containsKey(5));
-        assertTrue(treeMap.containsValue(5));
     }
 
     @Test
