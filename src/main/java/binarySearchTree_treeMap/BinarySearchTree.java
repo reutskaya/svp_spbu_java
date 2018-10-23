@@ -41,7 +41,7 @@ class BinarySearchTree<E extends Comparable<E>, V> {
             return node;
         }
 
-        /*if (key.compareTo(node.key) < 0) {
+        if (key.compareTo(node.key) < 0) {
             node.leftChild = insertRecursive(node.leftChild, key, value);
         } else {
             if (key.compareTo(node.key) > 0) {
@@ -51,10 +51,8 @@ class BinarySearchTree<E extends Comparable<E>, V> {
                     node.values.add(value);
                 }
             }
-        }*/
+        }
 
-        node = getNode(key, node);
-        node.values.add(value);
         return node;
     }
 
@@ -68,29 +66,30 @@ class BinarySearchTree<E extends Comparable<E>, V> {
 
         if (node == null) {
             throw new NoSuchElementException("no such element");
-        } /*else {
+        } else {
             if (node.key.compareTo(key) < 0) {
                 node.rightChild = deleteRecursive(key, node.rightChild);
             } else {
                 if (node.key.compareTo(key) > 0) {
                     node.leftChild = deleteRecursive(key, node.leftChild);
-                } else {*/
-        node = getNode(key, root);
+                } else {
 
-        if (node.leftChild == null) {
-            return node.rightChild;
-        } else {
-            if (node.rightChild == null) {
-                return node.leftChild;
-            } else {
-                Node<E, V> tempNode = minimalNode(node.rightChild);
+                    if (node.leftChild == null) {
+                        return node.rightChild;
+                    } else {
+                        if (node.rightChild == null) {
+                            return node.leftChild;
+                        } else {
+                            Node<E, V> tempNode = minimalNode(node.rightChild);
 
-                node.key = tempNode.key;
-                node.values = tempNode.values;
-                node.rightChild = deleteRecursive(tempNode.key, node.rightChild);
+                            node.key = tempNode.key;
+                            node.values = tempNode.values;
+                            node.rightChild = deleteRecursive(tempNode.key, node.rightChild);
+                        }
+                    }
+                }
             }
         }
-
 
         return node;
     }
@@ -117,37 +116,6 @@ class BinarySearchTree<E extends Comparable<E>, V> {
         } else {
             result = node.values;
         }
-
-        return result;
-    }
-
-    private Node<E, V> getNode(E key, Node<E, V> node) {
-        Node<E, V> result;
-
-        if (node == null) {
-            node = new Node(key, null, null, null);
-            return node;
-        }
-
-        if (node.key.compareTo(key) < 0) {
-            result = getNode(key, node.rightChild);
-        } else if (node.key.compareTo(key) > 0) {
-            result = getNode(key, node.leftChild);
-        } else {
-            result = node;
-        }
-            /*if (key.compareTo(node.key) < 0) {
-                result = getNode(key, node.leftChild);
-            } else {
-                if (key.compareTo(node.key) > 0) {
-                    result = getNode(key, node.rightChild);
-                } else {
-                    if (node.key.compareTo(key) == 0) {
-                        result =  node;
-                    }
-                }
-            }*/
-
 
         return result;
     }
